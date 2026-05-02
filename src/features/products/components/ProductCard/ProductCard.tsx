@@ -5,6 +5,7 @@
  */
 
 import React, { memo, useState } from 'react'
+import { Star } from 'lucide-react'
 import type { Product } from '../../../../types'
 import Select from '../../../../components/Select'
 import './ProductCard.css'
@@ -60,7 +61,10 @@ const ProductCard = memo(
             {/* Category Badge + Rating */}
             <div className="product-card-meta">
               <span className="product-category-badge">{p.category}</span>
-              <span className="product-rating">{p.rating?.rate ?? '-'} / 5</span>
+              <span className="product-rating">
+                <Star size={12} className="product-rating-icon" aria-hidden="true" />
+                <span>{p.rating?.rate ?? '-'} / 5</span>
+              </span>
             </div>
 
             {/* Spacer to push actions to bottom */}
