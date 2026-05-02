@@ -196,7 +196,10 @@ const useProductsStore = create<State>()(
         if (!res.success) {
           // Rollback to previous state
           const latestPast = get().past[get().past.length - 1] || []
-          set({ present: latestPast })
+          set({ 
+            present: latestPast,
+            pending: { ...get().pending, [id]: false }
+          })
           
           persistState({
             past: get().past.slice(0, -1),
@@ -209,8 +212,9 @@ const useProductsStore = create<State>()(
           
           toast.error('Failed to update category — rolled back')
         } else {
-          // Success: clear pending
+          // Success: clear pending and show success notification
           set((s) => ({ pending: { ...s.pending, [id]: false } }))
+          toast.success(`Category updated successfully`)
         }
       })
     },

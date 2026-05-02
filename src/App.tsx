@@ -4,6 +4,8 @@
  */
 
 import React, { useEffect, useCallback } from 'react'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 import useProductsStore from './features/products/store/useProductsStore'
 import ProductGrid from './features/products/components/ProductGrid'
 
@@ -54,19 +56,33 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      {/* Toast Notifications */}
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={true}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
+
       {/* Header */}
       <header className="sticky top-0 z-10 border-b border-slate-200 bg-white shadow-sm">
-        <div className="mx-auto max-w-screen-2xl px-4 py-4 lg:px-6">
-          <div className="flex items-center justify-between">
+        <div className="mx-auto max-w-screen-2xl px-2 py-3 sm:px-4 sm:py-4 lg:px-6">
+          <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
             <div>
-              <h1 className="text-2xl font-bold tracking-tight text-slate-900">
+              <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900">
                 Smart Product Grid
               </h1>
-              <p className="mt-0.5 text-sm text-slate-600">
+              <p className="mt-0.5 text-xs sm:text-sm text-slate-600">
                 Manage products with search, filtering, and undo/redo
               </p>
             </div>
-            <div className="text-xs text-slate-500">
+            <div className="text-xs text-slate-500 whitespace-nowrap">
               <p>
                 <strong>Shortcuts:</strong> Ctrl+Z (Undo) • Ctrl+Y (Redo)
               </p>
@@ -76,7 +92,7 @@ const App: React.FC = () => {
       </header>
 
       {/* Main Content */}
-      <main className="mx-auto max-w-screen-2xl px-4 py-6 lg:px-6">
+      <main className="mx-auto max-w-screen-2xl px-2 py-4 sm:px-4 sm:py-6 lg:px-6">
         <ProductGrid />
       </main>
 

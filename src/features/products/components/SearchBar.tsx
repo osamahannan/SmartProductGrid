@@ -28,7 +28,7 @@ export default function SearchBar({ value, onChange, debounceMs = 300 }: Props) 
       </div>
       <input
         type="text"
-        className="block w-full rounded-xl border border-slate-200 bg-white py-2.5 pl-10 pr-4 text-sm text-slate-900 placeholder-slate-400 focus:border-slate-400 focus:outline-none focus:ring-4 focus:ring-slate-100 transition-all"
+        className="block w-full rounded-xl border border-slate-200 bg-white py-2 md:py-2.5 pl-10 pr-4 text-xs md:text-sm text-slate-900 placeholder-slate-400 focus:border-slate-400 focus:outline-none focus:ring-4 focus:ring-slate-100 transition-all"
         placeholder="Search products by title..."
         value={local}
         onChange={(e) => setLocal(e.target.value)}

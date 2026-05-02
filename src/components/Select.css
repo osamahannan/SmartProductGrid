@@ -99,6 +99,34 @@
   flex-shrink: 0;
 }
 
+/* Mobile optimization */
+@media (max-width: 768px) {
+  .custom-select-trigger {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.6rem;
+  }
+  .custom-select-option {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .custom-select-dropdown {
+    max-height: 180px;
+  }
+  .custom-select-trigger {
+    font-size: 0.75rem;
+    padding: 0.35rem 0.5rem;
+    border-radius: 8px;
+  }
+  .custom-select-option {
+    padding: 0.5rem 0.6rem;
+    font-size: 0.7rem;
+    border-radius: 6px;
+  }
+}
+
 /* Scrollbar styling for dropdown */
 .custom-select-dropdown::-webkit-scrollbar { width: 5px; }
 .custom-select-dropdown::-webkit-scrollbar-track { background: transparent; }

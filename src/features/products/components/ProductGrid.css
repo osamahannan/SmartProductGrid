@@ -36,3 +36,10 @@
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
+
+/* Very small screens: tighter gap */
+@media (max-width: 500px) {
+  .product-grid {
+    gap: 0.625rem;
+  }
+}

@@ -75,7 +75,7 @@ const Controls = memo(
         {/* Category Filter */}
         <div className="filter-group">
           <label className="filter-group-label">Category</label>
-          <div style={{ width: '180px' }}>
+          <div className="category-select-wrapper">
             <Select
               options={[{ value: '', label: 'All categories' }, ...categories.map((c) => ({ value: c, label: c }))]}
               value={selectedCategory ?? ''}

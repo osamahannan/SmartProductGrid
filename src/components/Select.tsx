@@ -40,7 +40,7 @@ export default function Select({ options, value, onChange, disabled, ariaLabel, 
 
   const sizeClasses = size === 'sm'
     ? 'px-2 py-1 text-[11px]'
-    : 'px-4 py-2.5 text-sm'
+    : 'px-3 py-2 text-xs md:px-4 md:py-2.5 md:text-sm'
 
   return (
     <div ref={ref} className="custom-select-wrapper">
