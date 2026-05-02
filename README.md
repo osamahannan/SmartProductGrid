@@ -8,7 +8,7 @@ SmartGridProduct is a React + TypeScript web app that demonstrates a polished pr
 - Filter products with a custom dropdown component
 - Sort by price or rating in ascending or descending order
 - Edit product categories with optimistic UI updates
-- Undo and redo category changes
+- Undo and redo category changes with keyboard changes Ctrl+Z (Undo) • Ctrl+Y (Redo)
 - Display product images from the API
 - Simulate live server updates for price and rating
 - Persist UI state in `localStorage`
