@@ -2,6 +2,10 @@
 
 SmartGridProduct is a React + TypeScript web app that demonstrates a polished product grid with search, custom filters, sort controls, optimistic category edits, undo/redo history, and simulated live updates.
 
+## Desktop Snapshot
+
+![SmartGridProduct Desktop View](src/assets/images/snapshot.png)
+
 ## Highlights
 
 - Search products by title with debounced input
