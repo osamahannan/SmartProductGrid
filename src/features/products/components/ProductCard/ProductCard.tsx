@@ -5,8 +5,8 @@
  */
 
 import React, { memo, useState } from 'react'
-import type { Product } from '../../../types'
-import Select from '../../../components/Select'
+import type { Product } from '../../../../types'
+import Select from '../../../../components/Select'
 import './ProductCard.css'
 
 const CATEGORY_OPTIONS = ["men's clothing", "women's clothing", 'jewelery', 'electronics']

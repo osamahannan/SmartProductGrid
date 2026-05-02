@@ -1,11 +1,11 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react'
-import useProductsStore from '../store/useProductsStore'
-import { Product } from '../../../types'
-import ProductCard from './ProductCard'
-import SearchBar from './SearchBar'
-import Controls from './Controls'
-import { subscribeServerUpdates } from '../api/products'
-import LoadingSkeleton from './LoadingSkeleton'
+import useProductsStore from '../../store/useProductsStore'
+import { Product } from '../../../../types'
+import ProductCard from '../ProductCard'
+import SearchBar from '../SearchBar'
+import Controls from '../Controls'
+import { subscribeServerUpdates } from '../../api/products'
+import LoadingSkeleton from '../LoadingSkeleton'
 import './ProductGrid.css'
 
 export default function ProductGrid() {

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Search } from 'lucide-react'
-import useDebounce from '../../../hooks/useDebounce'
+import useDebounce from '../../../../hooks/useDebounce'
 
 type Props = {
   value: string
