@@ -4,10 +4,9 @@ import { Product } from '../../../types'
 import ProductCard from './ProductCard'
 import SearchBar from './SearchBar'
 import Controls from './Controls'
-import { subscribeServerUpdates } from '../../../api/products'
-import { ToastContainer, toast } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
+import { subscribeServerUpdates } from '../api/products'
 import LoadingSkeleton from './LoadingSkeleton'
+import './ProductGrid.css'
 
 export default function ProductGrid() {
   const loadProducts = useProductsStore((s) => s.loadProducts)
@@ -27,7 +26,6 @@ export default function ProductGrid() {
   const canUndo = useProductsStore((s) => s.canUndo())
   const canRedo = useProductsStore((s) => s.canRedo())
 
-  const lastLiveToastAt = useRef(0)
   const [liveUpdateCount, setLiveUpdateCount] = useState(0)
 
   useEffect(() => { loadProducts() }, [loadProducts])
@@ -36,11 +34,6 @@ export default function ProductGrid() {
     const unsub = subscribeServerUpdates((patch) => {
       applyServerPatch(patch)
       setLiveUpdateCount((count) => count + 1)
-      const now = Date.now()
-      if (now - lastLiveToastAt.current > 15000) {
-        lastLiveToastAt.current = now
-        toast.info('Live updates are being applied in the background')
-      }
     })
     return unsub
   }, [applyServerPatch])
@@ -123,8 +116,6 @@ export default function ProductGrid() {
         )}
       </div>
 
-      {/* Toast container for notifications */}
-      <ToastContainer position="top-right" />
     </div>
   )
 }

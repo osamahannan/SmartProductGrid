@@ -8,6 +8,7 @@ import React, { memo, useCallback } from 'react'
 import { ArrowUp, ArrowDown, Undo2, Redo2 } from 'lucide-react'
 import Select from '../../../components/Select'
 import type { SortOption } from '../../../types'
+import './Controls.css'
 
 type Props = {
   categories: string[]

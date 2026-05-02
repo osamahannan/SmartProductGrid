@@ -1,0 +1,38 @@
+/* ─── Responsive Product Grid ───
+     xl  (≥1280px) : 4 columns
+     lg  (≥1024px) : 3 columns
+     md  ( ≥768px) : 2 columns
+     sm  (  <768px) : 1 column
+─────────────────────────────── */
+
+.product-grid {
+  display: grid;
+  /* mobile-first: 1 col */
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.875rem;
+  /* Prevent grid from ever exceeding its container */
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+}
+
+@media (min-width: 600px) {
+  /* tablet: 2 cols */
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 960px) {
+  /* desktop medium: 3 cols */
+  .product-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1750px) {
+  /* desktop large: 4 cols */
+  .product-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
